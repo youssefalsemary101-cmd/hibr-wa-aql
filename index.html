@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b35">
+  <title>حبر وعقل التعليمية</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="حبر وعقل التعليمية">
+      <span class="brand-mark">ح</span>
+      <span><strong>حبر وعقل</strong><small>منصة تعليمية مصرية</small></span>
+    </a>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="تبديل المظهر">◐</button>
+  </header>
+
+  <main class="shell">
+    <section id="welcome" class="welcome panel">
+      <div class="eyebrow">تعلّم • تقدّم • حقّق هدفك</div>
+      <h1>طريقك للتعلّم يبدأ <span>من هنا</span></h1>
+      <p>دروسك وملفاتك واختباراتك في مكان واحد، بتنظيم يناسب مرحلتك الدراسية.</p>
+      <div class="feature-pills"><span>محتوى منظّم</span><span>متابعة التقدم</span><span>تصميم مناسب للموبايل</span></div>
+    </section>
+
+    <section class="panel auth-panel">
+      <div class="section-heading">
+        <div><span class="eyebrow">مرحبًا بك</span><h2>الدخول إلى المنصة</h2></div>
+        <span class="lock-mark">✦</span>
+      </div>
+      <div class="role-tabs" role="group" aria-label="نوع الحساب">
+        <button class="role-tab active" data-role="student" type="button">طالب</button>
+        <button class="role-tab" data-role="teacher" type="button">معلم</button>
+        <button class="role-tab" data-role="admin" type="button">مدير</button>
+      </div>
+      <form id="authForm">
+        <label for="phone">رقم الهاتف المصري</label>
+        <input id="phone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="01XXXXXXXXX" maxlength="11" required>
+        <label for="password">كلمة المرور</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="أدخل كلمة المرور" minlength="4" required>
+        <div id="studentFields">
+          <label for="stage">المرحلة الدراسية</label>
+          <select id="stage" required>
+            <option value="">اختر المرحلة</option>
+            <option>الابتدائية</option><option>الإعدادية</option><option>الثانوية العامة</option><option>البكالوريا</option>
+          </select>
+          <label for="grade">الصف الدراسي</label>
+          <select id="grade" required><option value="">اختر المرحلة أولًا</option></select>
+          <div id="trackWrap" hidden>
+            <label for="track">الشعبة / المسار</label>
+            <select id="track"><option value="">اختر الشعبة أو المسار</option></select>
+          </div>
+        </div>
+        <div id="adminCodeWrap" hidden>
+          <label for="adminCode">كود المدير (تجريبي فقط)</label>
+          <input id="adminCode" type="password" placeholder="أدخل كود المدير">
+        </div>
+        <button class="primary-btn full" type="submit">دخول / إنشاء حساب تجريبي</button>
+        <p class="tiny-note">هذه نسخة واجهات تجريبية: لا تدخل كلمة مرور حقيقية أو بيانات شخصية حساسة.</p>
+      </form>
+      <div id="authMessage" class="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="dashboard" class="dashboard panel" hidden>
+      <div class="dashboard-head">
+        <div><span class="eyebrow" id="dashboardEyebrow">لوحة التحكم</span><h2 id="dashboardTitle">أهلًا بك</h2><p id="dashboardSubtitle"></p></div>
+        <button id="logoutBtn" class="secondary-btn" type="button">خروج</button>
+      </div>
+      <div id="dashboardCards" class="dashboard-grid"></div>
+      <div id="dashboardDetails" class="details-box"></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-heading"><div><span class="eyebrow">اكتشف المنصة</span><h2>مساحات التعلّم</h2></div></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon">▤</span><h3>الدروس والملفات</h3><p>تنظيم الدروس والملخصات وملفات PDF حسب المرحلة والصف.</p></article>
+        <article class="feature-card"><span class="feature-icon">✓</span><h3>الاختبارات</h3><p>تدريب على الأسئلة ومراجعة النتائج والتقدم الدراسي.</p></article>
+        <article class="feature-card"><span class="feature-icon">♙</span><h3>المعلمون</h3><p>صفحات للمعلمين ومحتوى يمر بالمراجعة قبل النشر.</p></article>
+        <article class="feature-card"><span class="feature-icon">⌂</span><h3>مجتمع آمن</h3><p>تصوّر لمساحات المذاكرة والتواصل مع أدوات حماية.</p></article>
+      </div>
+    </section>
+    <footer><span>© حبر وعقل التعليمية</span><span>نسخة تجريبية للتطوير</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
